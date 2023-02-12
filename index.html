@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="library.js"></script>
+    <script src="color.js"></script>
     <script src="main.js"></script>
 
     <title>RGB color creator</title>
@@ -82,13 +82,10 @@
                 <h2>Hit click button to create a random color</h2>
                 <button id="color-btn">Click!</button>
             </div>
-
-            <div id="random-color-list"> 
-                <p>Show a list of colors that randomly generated</p>
-                <div id="random-color-items">
-                    <p>A user can pick the color and modify RGB value</p>
-                </div>
+            <h3>Your random color list:</h3>
+            <div id="random-color-list" class="random-color-list">
             </div>
+            <h3>A user can pick the color, go to detail page and modify RGB value</h3>
         </div>
 
         <!-- page footer -->
@@ -136,14 +133,22 @@
                     </div>
                 </div>
 
-                <div id="suggestion-color-container">
-                    <div id="similar-color-suggestions">
-                        <!-- create fav btn for each div in js -->
-                        <div id="monochromatic">show the list of similar colors with add to favorite button for each color</div>
-                        <div id="complementary">show the list of complementary colors with add to favorite button for each color</div>
+
+                <div id="picking-color-container"> 
+                    <div id="picked-item-container">
+                        <p>Show the picked color with button named change</p>
+                        <p>This color will be change corresponding to the new RGB value</p>
+                    </div>
+                    <div id="suggestion-color-container">
+                        <p>This list is generated based-on the picked/changed color</p>
+                        <p>Each color in the list have a add to favorite color</p>
+                        <div id="monochromatic">
+                            <p>Show a list of slightly different colors. Give users more options to pick their favorite colors </p>
+                        </div>
+                        <div id="complementary">show the list of complementary colors with an add to favorite button for each color</div>
+                    </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -183,14 +188,18 @@
         <!-- content -->
         <div data-role="content" data-theme="c">
 
-            <div id="color-library-container">
+            <div id="library-container">
+                <div id="library-color-container">
+                    <h3>Your library colors</h3>
+                    <button id="list-all-colors-btn">List all colors</button>
+                    <div id="list-library-color"></div>
+                </div>
 
-                <button id="list-all-colors-btn">List all colors</button>
-                <p>Show a list of all random colors</p>
-                <div id="library-btn-container">
+                <div id="favorite-color-container">
                     <input type="button" value="List favorite colors" id="list-favorite-btn" data-inline="true" />
                     <p>Show all colors of the favorite list with the button named "get RGB code" under its color</p>
                     <p>RGB format RGB (value, value, value)</p>
+                    <div id="list-favorite-color"></div>
                 </div>
                 
             </div>
