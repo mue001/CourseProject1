@@ -1,3 +1,16 @@
-h2 {
+#pick-lbr-val {
     text-align: center;
+}
+
+#pick-lbr-color {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+
+.libraryPickColor{
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
