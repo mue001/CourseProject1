@@ -35,6 +35,7 @@
                 <ul>
                     <li><a href="#home">Home Page</a></li>
                     <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
                     <li><a href="#colorLibrary">Color Library</a></li>
                 </ul>
             </div><!-- /navbar -->
@@ -72,6 +73,7 @@
                 <ul>
                     <li><a href="#home">Home Page</a></li>
                     <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
                     <li><a href="#colorLibrary">Color Library</a></li>
                 </ul>
             </div><!-- /navbar -->
@@ -100,6 +102,47 @@
     <!-- ============================  END COLOR MAKER PAGE  ============================================== -->
 
 
+    <!-- =================================  ADD COLOR PAGE  ================================================= -->
+    <div data-role="page" id="addColor">
+
+        <!-- header -->
+        <div data-role="header">
+            <h2>RGB color creator - Add Color</h2>
+
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
+                    <li><a href="#colorLibrary">Color Library</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme="c">
+            <div id="add-color-container">
+                <h2 >Create a new color</h2>
+                <h3 id = "exception-container"></h3>
+                Enter R value (0 - 255) <br />
+                <input type="number" value="" id="r-add-value" />
+                Enter G value (0 - 255) <br />
+                <input type="number" value="" id="g-add-value" />
+                Enter B value (0 - 255) <br />
+                <input type="number" value="" id="b-add-value" />
+            </div>
+            <input type="button" value="Click to add color" id="buttonAdd" data-inline="true" />
+            <input type="button" value="Clear Data" id="buttonClear" data-inline="true" />
+        </div>
+
+        <!-- page footer -->
+        <div data-role="footer" id="footer">
+            <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
+        </div>
+
+
+    </div>
+    <!-- ============================  END ADD COLOR PAGE  ============================================== -->
 
 
 
@@ -114,6 +157,7 @@
                 <ul>
                     <li><a href="#home">Home Page</a></li>
                     <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
                     <li><a href="#colorLibrary">Color Library</a></li>
                 </ul>
             </div><!-- /navbar -->
@@ -134,8 +178,6 @@
                         <button id="change-btn">Change</button>
                     </div>
                 </div>
-
-
                 <div id="picking-color-container"> 
                     <div id="picked-item-container">
                         <p>Show the picked color with button named change</p>
@@ -148,7 +190,6 @@
                             <p>Show a list of slightly different colors. Give users more options to pick their favorite colors </p>
                         </div>
                         <div id="complementary">show the list of complementary colors with an add to favorite button for each color</div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -166,8 +207,6 @@
 
 
 
-
-
     <!-- ==============================    COLOR LIBRARY PAGE  =============================================== -->
     <div data-role="page" id="colorLibrary" data-theme="a">
 
@@ -181,6 +220,7 @@
                 <ul>
                     <li><a href="#home">Home Page</a></li>
                     <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
                     <li><a href="#colorLibrary">Color Library</a></li>
                 </ul>
             </div><!-- /navbar -->
@@ -193,7 +233,7 @@
             <div id="library-container">
                 <div id="library-color-container">
                     <h2>Your library colors</h2>
-                    <button id="list-all-colors-btn">List all colors</button>
+                    <!-- <button id="list-all-colors-btn">List all library colors</button> -->
                     <div id="list-library-color"></div>
                 </div>
 
@@ -205,6 +245,7 @@
                 </div>
                 
             </div>
+        </div>
 
             <!-- notes footer -->
             <div data-role="footer" id="footer" data-theme="c">
@@ -212,8 +253,42 @@
             </div>
 
 
+     </div>
+        <!-- ==========================   END COLOR LIBRARY PAGE  ================================== -->
+
+ <!-- =================================  LIBRARY COLOR DETAIL PAGE  ================================================= -->
+    <div data-role="page" id="libraryDetails">
+
+        <!-- header -->
+        <div data-role="header">
+            <h2>Library Color Detail page</h2>
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
+                    <li><a href="#colorLibrary">Color Library</a></li>
+                </ul>
+            </div><!-- /navbar -->
         </div>
-        <!-- ======================================================================================== -->
+
+
+        <!-- content -->
+        <div data-role="content" data-theme="c">
+            <div id="detail-container">
+                <h2>Color item's details </h2>
+                <div id="show-apick-color"></div>
+            </div>
+        </div>
+
+        <!-- page footer -->
+        <div data-role="footer" id="footer">
+            <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
+        </div>
+
+
+    </div>
+    <!-- ============================  END LIRARY COLOR DETAIL PAGE  ============================================== -->
 
 
 </body>
