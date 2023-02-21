@@ -8,13 +8,15 @@
     {% comment %}
     <link rel="stylesheet" href="style.css" /> {% endcomment %}
 
-    
-    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <!-- <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /> -->
 
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="color.js"></script>
+    <script src="favorite_color.js"></script>
+    <script src="monochromatic_color.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/themes/jenny-modified-themes.min.css" />
     <script src="main.js"></script>
@@ -123,7 +125,7 @@
         <!-- content -->
         <div data-role="content" data-theme="c">
             <div id="detail-container">
-                <h2 id ="test-para">Color item's details </h2>
+                <h2 id="test-para">Color item's details </h2>
 
                 <div id="modify-color-container">
                     <div id="color-item-detail">
@@ -136,7 +138,7 @@
                 </div>
 
 
-                <div id="picking-color-container"> 
+                <div id="picking-color-container">
                     <div id="picked-item-container">
                         <p>Show the picked color with button named change</p>
                         <p>This color will be change corresponding to the new RGB value</p>
@@ -145,20 +147,46 @@
                         <p>This list is generated based-on the picked/changed color</p>
                         <p>Each color in the list have a add to favorite color</p>
                         <div id="monochromatic">
-                            <p>Show a list of slightly different colors. Give users more options to pick their favorite colors </p>
+                            <p>Show a list of slightly different colors. Give users more options to pick their favorite
+                                colors </p>
+                            <div id="m1"></div>
+                            <button id="m1-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="m2"></div>
+                            <button id="m2-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="m3"></div>
+                            <button id="m3-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="m4"></div>
+                            <button id="m4-btn" class="suggestion-color-btn">Add to favorite</button>
+
                         </div>
-                        <div id="complementary">show the list of complementary colors with an add to favorite button for each color</div>
-                    </div>
+                        <!-- <div id="complementary">show the list of complementary colors with an add to favorite button for
+                            each color
+                            <div id="c1"></div>
+                            <button id="c1-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="c2"></div>
+                            <button id="c2-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="c3"></div>
+                            <button id="c3-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                            <div id="c4"></div>
+                            <button id="c4-btn" class="suggestion-color-btn">Add to favorite</button>
+
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- page footer -->
-        <div data-role="footer" id="footer">
-            <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
-        </div>
+    <!-- page footer -->
+    <div data-role="footer" id="footer">
+        <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
+    </div>
 
 
     </div>
@@ -203,7 +231,7 @@
                     <p>RGB format RGB (value, value, value)</p>
                     <div id="list-favorite-color"></div>
                 </div>
-                
+
             </div>
 
             <!-- notes footer -->
