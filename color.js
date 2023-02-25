@@ -5,7 +5,6 @@ let Color = function (colorID, R, G, B) {
     this.valueG = G;
     this.valueB = B;
     this.colorName = "RGB" + this.valueR + this.valueG + this.valueB;
-
 };
 
 Color.prototype.displayColor = function (colorClassName) {

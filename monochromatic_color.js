@@ -1,10 +1,10 @@
-
 let aMonoArray = [];
-let aMonoList = function (aMonoColorDiv, i, r, g, b) {
-    this.colorID = aMonoColorDiv.id + i
-    this.aMonoR = r
-    this.aMonoG = g
-    this.aMonoB = b
+
+let aMonoList = function (aMonoColorDiv, r, g, b) {
+    this.colorID = aMonoColorDiv.id; //aMonoCO=olorDiv.id is "randomColorList[index].colorName + [i]" i=1-4
+    this.aMonoR = r;
+    this.aMonoG = g;
+    this.aMonoB = b;
 }
 
 Color.prototype.MonochromaticColor = function (i, aMonoColor, r, g, b) {
@@ -46,14 +46,14 @@ Color.prototype.MonochromaticColor = function (i, aMonoColor, r, g, b) {
     });
 
     // console.log(`when color id is ${aMonoColor.id} monochromatic color's HSB` + h, s, v)
-    return HSVtoRGB(aMonoColor.id, aMonoColor.className, h, s, v);
+    return HSVtoRGB(i, aMonoColor.id, h, s, v);
 
 
 };
 
 
 
-function HSVtoRGB(aMonoColorID, aMonoColorClass, h, s, v) {
+function HSVtoRGB(i, aMonoColorID, h, s, v) {
     var r, g, b;
 
     var i = Math.floor(h * 6);
@@ -71,42 +71,41 @@ function HSVtoRGB(aMonoColorID, aMonoColorClass, h, s, v) {
         case 5: r = v, g = p, b = q; break;
     }
 
-    r = Math.round(r * 255),
-    g = Math.round(g * 255),
-    b = Math.round(b * 255)
+    if (r > 255) {
+        r = 255;
+    }
+    if (g > 255) {
+        g = 255;
+    }
+    if (b > 255) {
+        b = 255;
+    }
+    if (r < 0) {
+        r = 0;
+    }
+    if (g < 0) {
+        g = 0;
+    }
+    if (b < 0) {
+        b = 0;
+    }
+
+    r = Math.round(r * 255);
+    g = Math.round(g * 255);
+    b = Math.round(b * 255);
 
 
 
-  
-    let aMonoColorDiv = document.getElementById(aMonoColorID)
-    aMonoColorDiv.id = "rgb(" + r + "," + g + "," + b + ")";
-    aMonoArray.push(new aMonoList(aMonoColorDiv, i, r, g, b))
+
+    let aMonoColorDiv = document.getElementById(aMonoColorID);
+    // aMonoColorDiv.id = "rgb(" + r + "," + g + "," + b + ")"; //div.id is already created in the main.js
+    aMonoArray.push(new aMonoList(aMonoColorDiv, r, g, b))
+    // console.log(i);
 
 
-    console.log("aMonoArray is" + aMonoArray[i])
-
-    aMonoColorDiv.setAttribute("mono-array", aMonoArray)
-
-
-
-
-    // if(aSuggestedColorClass == "complementary-class-name"){
-    //     console.log(aSuggestedColorClass)
-    //     // ComplementaryColor(aSuggestedColorID, r,g,b)
-    // }
 
     return aMonoColorDiv.style.background = "rgb(" + r + "," + g + "," + b + ")";
 
 
-}
+};
 
-//!!!Should get RGB codes from monochromatic
-// function ComplementaryColor(aComColorID,r,g,b){
-//     let cValueR = 255 - r;
-//     let cValueG = 255 - g;
-//     let cValueB = 255 - b;
-
-//     let aComColorDiv = document.getElementById(aComColorID)
-//     return aComColorDiv.style.background = "rgb(" + cValueR + "," + cValueG+ "," + cValueB + ")";
-
-// };
