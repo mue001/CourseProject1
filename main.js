@@ -128,6 +128,18 @@ function fillRGBinputValues(colorArray, colorElementIndex, containerName, rInput
                 = "rgb(" + colorArray[colorElementIndex].valueR + "," + colorArray[colorElementIndex].valueG + "," + colorArray[colorElementIndex].valueB + ")";
 };
 
+function getInboundValue(aValue){
+    if(aValue < 0){
+        return Math.max(aValue, 0);
+    }
+    else if(aValue > 255){
+        return Math.min(aValue, 255);
+    }
+    else{
+        return aValue;
+    }
+};
+
 function createObject() {
     colorID = randomColorList.length;
     let valueR = parseInt(Math.random() * 256);
@@ -148,9 +160,16 @@ function modifyRandomColor() {
 
 function updateObject(localParm) {
     console.log(localParm);
-    return randomColorList[localParm].valueR = document.getElementById("inputR").value,
-        randomColorList[localParm].valueG = document.getElementById("inputG").value,
-        randomColorList[localParm].valueB = document.getElementById("inputB").value;
+    let r = document.getElementById("inputR").value;
+    let g = document.getElementById("inputG").value;
+    let b = document.getElementById("inputB").value;
+    r = getInboundValue(r);
+    g = getInboundValue(g);
+    b = getInboundValue(b);
+
+    return randomColorList[localParm].valueR = r,
+        randomColorList[localParm].valueG = g,
+        randomColorList[localParm].valueB = b;
 }
 
 // Append the created object color to the page
@@ -265,5 +284,8 @@ function showLibraryDetailPage(aLbr, aArray){
 };
 
 function showFavoriteColors(){
+    if(favoriteColorList.length === 0){
+        alert('Your favorite list is empty!');
+    }
     showLibraryPage("frv","index.html#favoriteDetails", favoriteColorList);
 };
