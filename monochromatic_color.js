@@ -1,4 +1,4 @@
-let aMonoArray = [];
+/* let aMonoArray = [];
 
 let aMonoList = function (aMonoColorDiv, r, g, b) {
     this.colorID = aMonoColorDiv.id; //aMonoCO=olorDiv.id is "randomColorList[index].colorName + [i]" i=1-4
@@ -109,3 +109,4 @@ function HSVtoRGB(i, aMonoColorID, h, s, v) {
 
 };
 
+ */

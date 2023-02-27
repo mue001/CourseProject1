@@ -83,13 +83,12 @@
         <!-- content -->
         <div data-role="content" data-theme="c">
             <div id="color-maker-message">
-                <h2>Hit click button to create a random color</h2>
-                <button id="color-btn">Click!</button>
+                <h2>Click button to create random color list</h2>
+                <button id="random-color-btn">Create Color!</button>
             </div>
-            <h3>Your random color list:</h3>
+            <h2>Your random color list</h2>
             <div id="random-color-list" class="random-color-list">
             </div>
-            <h3>A user can pick the color, go to detail page and modify RGB value</h3>
         </div>
 
         <!-- page footer -->
@@ -108,7 +107,6 @@
     <!-- =================================  DETAIL PAGE  ================================================= -->
     <div data-role="page" id="details">
 
-
         <!-- header -->
         <div data-role="header">
             <h2>Detail page</h2>
@@ -125,31 +123,26 @@
 
         <!-- content -->
         <div data-role="content" data-theme="c">
-            <div id="detail-container">
-                <h2 id="test-para">Color item's details </h2>
-
-                <div id="modify-color-container">
-                    <div id="color-item-detail">
-                        <p id="color-item-id"></p>
-                        <input id="inputR" name="RGB" type="number">
-                        <input id="inputG" name="RGB" type="number">
-                        <input id="inputB" name="RGB" type="number">
-                        <button id="change-btn">Change</button>
+            <div id="outer-detail-container" class="outer-detail-container">
+                <div id="detail-container">
+                    <h2 id="test-para">Your Pick Color </h2>
+                    <div id="modify-color-container">
+                        <div id="color-item-detail">
+                            <p id="color-item-id"></p>
+                            <input id="inputR" name="RGB" type="number">
+                            <input id="inputG" name="RGB" type="number">
+                            <input id="inputB" name="RGB" type="number">
+                            <div id="button-container">
+                                <button id="change-btn">Change</button>              
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
                 <div id="picking-color-container">
-                    <div id="picked-item-container">
-                        <p>Show the picked color with button named change</p>
-                        <p>This color will be change corresponding to the new RGB value</p>
-                    </div>
                     <div id="suggestion-color-container">
-                        <p>This list is generated based-on the picked/changed color</p>
-                        <p>Each color in the list have a add to favorite color</p>
+                        <h2>Similar color list </h2>
                         <div id="monochromatic">
-                            <p>Show a list of slightly different colors. Give users more options to pick their favorite
-                                colors </p>
                             <div id="m1"></div>
                             <button id="m1-btn" class="suggestion-color-btn">Add to favorite</button>
 
@@ -166,16 +159,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+         </div>
 
 
     <!-- page footer -->
     <div data-role="footer" id="footer">
         <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
     </div>
-
-
-    </div>
+</div>
     <!-- ============================  END DETAIL PAGE  ============================================== -->
 
 
@@ -248,14 +239,12 @@
                 <div id="library-color-container">
                     <h2>Your library colors</h2>
                     <!-- <button id="list-all-colors-btn">List all library colors</button> -->
-                    <div id="list-library-color"></div>
+                    <div id="lbr-list-color" class="lbr-list-color"></div>
                 </div>
 
                 <div id="favorite-color-container">
                     <input type="button" value="List favorite colors" id="list-favorite-btn" data-inline="true" />
-                    <p>Show all colors of the favorite list with the button named "get RGB code" under its color</p>
-                    <p>RGB format RGB (value, value, value)</p>
-                    <div id="list-favorite-color"></div>
+                    <div id="frv-list-color" class="frv-list-color"></div>
                 </div>              
             </div>
         </div>
@@ -290,15 +279,58 @@
         <div data-role="content" data-theme="c">
             <div id="detail-lbr-container">
                 <h2>Library color details </h2>
-                <div id="show-apick-lbr-color" class="show-apick-lbr-color">
-                    <div id="pick-lbr-color"></div>
+                <div id="lbr-show-pick-color" class="lbr-show-pick-color">
+                    <div id="lbr-pick-color" class="lbr-pick-color"></div>
                 </div>
             </div>
 
+    <!--        <div id="detail-fvr-container">
+                <h2>Favorite color details </h2>
+                <div id="frv-show-pick-color" class="frv-show-pick-color">
+                    <div id="fvr-pick-color" class="fvr-pick-color"></div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- page footer -->
+        <div data-role="footer" id="footer">
+            <h3>Copyrigtht 2023 by Hoa Vo & Misako Ueshima</h3>
+        </div>
+
+
+    </div>
+    <!-- ============================  END LIRARY COLOR DETAIL PAGE  ============================================== -->
+
+ <!-- =================================  FAVORITE COLOR DETAIL PAGE  =================================== -->
+    <div data-role="page" id="favoriteDetails">
+
+        <!-- header -->
+        <div data-role="header">
+            <h2>Favorite Color Detail page</h2>
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#colorMaker">Color Maker</a></li>
+                    <li><a href="#addColor">Create a Color</a></li>
+                    <li><a href="#colorLibrary">Color Library</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+
+        <!-- content -->
+        <div data-role="content" data-theme="c">
+         <!--   <div id="detail-lbr-container">
+                <h2>Library color details </h2>
+                <div id="lbr-show-pick-color" class="lbr-show-pick-color">
+                    <div id="lbr-pick-color" class="lbr-pick-color"></div>
+                </div>
+            </div>   -->
+
             <div id="detail-fvr-container">
-                <h2>Favorit color details </h2>
-                <div id="show-apick-fvr-color" class="show-apick-fvr-color">
-                    <div id="pick-fvr-color"></div>
+                <h2>Favorite color details </h2>
+                <div id="frv-show-pick-color" class="frv-show-pick-color">
+                    <div id="fvr-pick-color" class="fvr-pick-color"></div>
                 </div>
             </div>
         </div>
@@ -310,7 +342,7 @@
 
 
     </div>
-    <!-- ============================  END LIRARY COLOR DETAIL PAGE  ============================================== -->
+    <!-- ============================  END FAVORITE COLOR DETAIL PAGE  ============================================== -->
 
 
 </body>

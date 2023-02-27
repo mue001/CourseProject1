@@ -1,4 +1,4 @@
-let favoriteColorList = [];
+/* let favoriteColorList = [];
 let colorID = 0;
 
 let fColor = function (R, G, B) {
@@ -58,3 +58,4 @@ function showFavoriteColors() {
     // now save THIS ID value in the localStorage "dictionairy"
 
 };
+ */
